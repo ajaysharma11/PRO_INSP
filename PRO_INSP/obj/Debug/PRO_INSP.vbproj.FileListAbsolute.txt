@@ -1,0 +1,36 @@
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbprojAssemblyReference.cache
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.FRM_MAIN.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form2.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Resources.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbproj.GenerateResource.cache
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbproj.CoreCompileInputs.cache
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\bin\Debug\DAILY_ INSP.accdb
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.exe.config
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.exe
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.pdb
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.xml
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form4.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.FORM_ATAG.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form6.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form7.resources
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.exe
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.xml
+C:\Users\Ajays\OneDrive\Desktop\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.pdb
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\bin\Debug\DAILY_ INSP.accdb
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.exe.config
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.exe
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.pdb
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\bin\Debug\PRO_INSP.xml
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbprojAssemblyReference.cache
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.FRM_MAIN.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form2.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form4.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.FORM_ATAG.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form6.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Form7.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.Resources.resources
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbproj.GenerateResource.cache
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.vbproj.CoreCompileInputs.cache
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.exe
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.xml
+C:\MY VB PROJECTS\TIA_INSP\PRO_INSP\obj\Debug\PRO_INSP.pdb

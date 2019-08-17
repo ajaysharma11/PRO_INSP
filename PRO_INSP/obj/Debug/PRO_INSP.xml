@@ -1,0 +1,151 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PRO_INSP
+</name>
+</assembly>
+<members>
+<member name="T:PRO_INSP.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PRO_INSP.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PRO_INSP.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet._BEAT__PDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.FORCASTDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.JOMDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.MY_DATADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet._BEAT__PRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.FORCASTRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.JOMRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.MY_DATARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet._BEAT__PRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.FORCASTRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.JOMRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSet.MY_DATARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.BEAT__PTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.FORCASTTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.JOMTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.MY_DATATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(PRO_INSP.DAILY__INSPDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(PRO_INSP.DAILY__INSPDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(PRO_INSP.DAILY__INSPDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.UpdateAll(PRO_INSP.DAILY__INSPDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
