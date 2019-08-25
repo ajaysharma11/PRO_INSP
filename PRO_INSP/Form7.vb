@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports System.String
-
+Imports System.Data
 
 Public Class Form7
 
@@ -11,12 +11,16 @@ Public Class Form7
     Dim INT2 As Integer
     Dim STR1 As String
     Dim STR2 As String
-    Dim constring As String = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\DAILY_INSP.accdb")
-    Dim connect As New OleDbConnection(constring)
-    '   con.ConnectionString =( Provider = Microsoft.ACE.OLEDB.12.0;Data Source="C:\MY VB PROJECT\TIA_INSP\\DAILY_ INSP.accdb")
+    ' Dim constring As String = ("Provider = Microsoft.ACE.OLEDB .12.0;Data Source= "|DataDirectory|\DAILY_ INSP.accdb"")
+    ' Dim constring As String = Provider = Microsoft.ACE.OLEDB.12.0;Data Source="|DataDirectory|\DAILY_ INSP.accdb"
+
+    ' Dim connect As New OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0;Data Source="|DataDirectory|\DAILY_ INSP.accdb"")
+    ' con.ConnectionString =( Provider = Microsoft.ACE.OLEDB.12.0;Data Source="C:\MY VB PROJECT\TIA_INSP\\DAILY_ INSP.accdb")
     Dim ds As New DataSet
 
-    Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter("select * from JOM", connect)
+    ' Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter("select * from JOM", connect)
+    Dim DGV As DataGridView = New DataGridView()
+    Dim BS As BindingSource = New BindingSource()
     ' Dim CONN As String = Provider = Microsoft.ACE.OLEDB.12.0;Data Source="|DataDirectory|\DAILY_ INSP.accdb"
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
@@ -30,65 +34,61 @@ Public Class Form7
     End Sub
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TableAdapterManager.JOMTableAdapter.Adapter.AcceptChangesDuringFill() = False
+
         'TODO: This line of code loads data into the 'DAILY__INSPDataSet._BEAT__P' table. You can move, or remove it, as needed.
         Me.BEAT__PTableAdapter.Fill(Me.DAILY__INSPDataSet._BEAT__P)
         'TODO: This line of code loads data into the 'DAILY__INSPDataSet.JOM' table. You can move, or remove it, as needed.
         Me.JOMTableAdapter.Fill(Me.DAILY__INSPDataSet.JOM)
         JOMBindingSource.MoveLast()
+        JOMBindingSource1.MoveLast()
+        BEAT__PBindingSource.MoveLast()
+
+        'Label3.Text = Me.DAILY__INSPDataSet.JOM.Rows.Count
         CMD_ADD.Select()
     End Sub
 
     Private Sub CMD_ADD_Click(sender As Object, e As EventArgs) Handles CMD_ADD.Click
         JOMBindingSource.AddNew()
+        IDTextBox.Select()
+        Me.Refresh()
     End Sub
 
     Private Sub CMD_SAVE_Click(sender As Object, e As EventArgs) Handles CMD_SAVE.Click
-        ' connect.Open()
-
-        JOMTableAdapter.InsertQuery(WEEK_ENDINGDateTimePicker.Value, DATE__OF__JOURNEYDateTimePicker.Value, DAY_OF_JOURNEYDateTimePicker.Value, TRAINTextBox.Text, DEPMaskedTextBox.Text, ARRMaskedTextBox.Text, ST_FROMTextBox.Text, ST_TOTextBox.Text, ST__WORKED__ATComboBox.Text, ROUNDComboBox.Text, DAY_BOOKEDNumericUpDown.Value, REMARKSTextBox.Text, IR_CASE__NOTextBox.Text, INSP_COMComboBox.Text, REPORT__SUBMISSIONDateTimePicker.Value, _2RODDateTimePicker.Value, _3RODDateTimePicker.Value, _1R0DDateTimePicker.Value, LINSPDateTimePicker.Value, NDUETextBox.Text)
-        JOMBindingSource.EndEdit()
-        If DAILY__INSPDataSet.HasChanges Then
-            MsgBox("DATA ADDED TO DATABASE")
-        Else
-            MsgBox("DATA NOT ADDED TO DATABASE")
-        End If
-
 
         Try
-            Me.Validate()
             ' JOMBindingSource.EndEdit()
+            JOMTableAdapter.InsertQuery(WEEK_ENDINGDateTimePicker.Value, DATE__OF__JOURNEYDateTimePicker.Value, DAY_OF_JOURNEYDateTimePicker.Value, TRAINTextBox.Text, DEPMaskedTextBox.Text, ARRMaskedTextBox.Text, ST_FROMTextBox.Text, ST_TOTextBox.Text, ST__WORKED__ATComboBox.Text, ROUNDComboBox.Text, DAY_BOOKEDNumericUpDown.Value, REMARKSTextBox.Text, IR_CASE__NOTextBox.Text, INSP_COMComboBox.Text, REPORT__SUBMISSIONDateTimePicker.Value, _2RODDateTimePicker.Value, _3RODDateTimePicker.Value, _1R0DDateTimePicker.Value, LINSPDateTimePicker.Value, NDUETextBox.Text)
+            ' JOMTableAdapter.Update(Me.DAILY__INSPDataSet)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        '' CHECK If DATA ADDED TO DATASET
+        'If DAILY__INSPDataSet.HasChanges Then
+        '    MsgBox("DATA ADDED TO DATASET")
+        'Else
+        '    MsgBox("DATA NOT ADDED TO DATASET")
+        'End If
+        JOMDataGridView.Refresh()
+
+        Try
+            JOMBindingSource.EndEdit()
             JOMTableAdapter.Update(Me.DAILY__INSPDataSet.JOM)
+            BEAT__PBindingSource.EndEdit()
             TableAdapterManager.UpdateAll(Me.DAILY__INSPDataSet)
             DAILY__INSPDataSet.AcceptChanges()
-            MsgBox("DATA SAVED")
+            MsgBox("TOTAL " & INT2 & "DATA SAVED")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
 
-        connect.Close()
-        'Try
-        '    Me.Validate()
-        '    JOMDataGridView.EndEdit()
-        '    JOMBindingSource.EndEdit()
-        '    TableAdapterManager.UpdateAll(MY_INSP1DataSet)
-        '    MY_INSP1DataSet.AcceptChanges()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical)
-        'End Try
-        'Try
-        '    Me.Validate()
-        '    BEAT__PDataGridView.EndEdit()
-        '    BEAT__PBindingSource1.EndEdit()
-        '    BEAT__PTableAdapter1.Update(Me.MY_INSP1DataSet1._BEAT__P)
-        '    Me.MY_INSP1DataSet1.JOM.AcceptChanges()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical)
-        'End Try
     End Sub
 
     Private Sub CMD_EXIT_Click(sender As Object, e As EventArgs) Handles CMD_EXIT.Click
+
+        FRM_MAIN.Show()
+
         Me.Close()
+
 
     End Sub
 
@@ -100,10 +100,11 @@ Public Class Form7
             ST__WORKED__ATComboBox.Items.Add(STR1)
             BEAT__PBindingSource.MoveNext()
         Next NN
-        BEAT__PBindingSource.MoveLast()
+        '  BEAT__PBindingSource.MoveLast()
 
 
         'INCREASE WEEK AND DATE
+        WEEK_ENDINGDateTimePicker.Value = Now
         If Weekday(DTOJ, vbSunday) = 7 Then
             WEEK_ENDINGDateTimePicker.Text = DateAdd(DateInterval.Day, 7, WDT)
         Else
@@ -113,16 +114,16 @@ Public Class Form7
         IDTextBox.Text = INT
         DATE__OF__JOURNEYDateTimePicker.Value = DateAdd("d", 1, DTOJ)
         DAY_OF_JOURNEYDateTimePicker.Value = DATE__OF__JOURNEYDateTimePicker.Value
-        'BEAT__PBindingSource.EndEdit()
-        BEAT__PDataGridView.ClearSelection()
+        BEAT__PBindingSource.EndEdit()
+        'BEAT__PDataGridView.ClearSelection()
         'ST__WORKED__ATComboBox.Visible = True
 
-        WEEK_ENDINGDateTimePicker.Select()
+        IDTextBox.Select()
     End Sub
 
     Private Sub CMD_ADD_KeyUp(sender As Object, e As KeyEventArgs) Handles CMD_ADD.KeyUp
         If e.KeyCode = Keys.Enter Then
-            WEEK_ENDINGDateTimePicker.Select()
+            IDTextBox.Select()
         End If
     End Sub
 
@@ -150,7 +151,85 @@ Public Class Form7
         End Try
     End Sub
 
-    Private Sub DEPMaskedTextBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles DEPMaskedTextBox.MaskInputRejected
+
+    Private Sub ROUNDComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ROUNDComboBox.SelectedIndexChanged
+        If Me.ROUNDComboBox.Text = "1ST ROUND" And DAY_BOOKEDNumericUpDown.Value = 1 Then
+            Me._1R0DDateTimePicker.Text = Me.DATE__OF__JOURNEYDateTimePicker.Value
+            Me._2RODDateTimePicker.Text = ""
+            Me._3RODDateTimePicker.Text = ""
+        ElseIf ROUNDComboBox.Text = "2ND ROUND" And DAY_BOOKEDNumericUpDown.Value = 1 Then
+            Me._2RODDateTimePicker.Text = Me.DATE__OF__JOURNEYDateTimePicker.Value
+            Me._1R0DDateTimePicker.Text = ""
+            Me._3RODDateTimePicker.Text = ""
+        ElseIf ROUNDComboBox.Text = "3RD ROUND" And DAY_BOOKEDNumericUpDown.Value = 1 Then
+            Me._3RODDateTimePicker.Text = Me.DATE__OF__JOURNEYDateTimePicker.Value
+            Me._2RODDateTimePicker.Text = ""
+            Me._1R0DDateTimePicker.Text = ""
+        End If
+    End Sub
+
+    Private Sub CMD_EDIT_Click(sender As Object, e As EventArgs) Handles CMD_EDIT.Click
+        ' connect.Open()
+
+        ' ds = Me.DAILY__INSPDataSet.GetChanges()
+
+        'JOMDataGridView.DataSource = ds
+
+        If JOMDataGridView.Rows.Count <> 0 Then
+            Try
+                JOMBindingSource.EndEdit()
+                ' JOMTableAdapter.Update(Me.DAILY__INSPDataSet.JOM)
+                TableAdapterManager.UpdateAll(Me.DAILY__INSPDataSet)
+                DAILY__INSPDataSet.AcceptChanges()
+                MsgBox("DATA SAVED")
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+
+        Else
+
+            ' Try
+            ' Me.DAILY__INSPDataSet.Merge(ds)
+            JOMBindingSource.EndEdit()
+                JOMTableAdapter.Update(Me.DAILY__INSPDataSet.JOM)
+                ' TableAdapterManager.UpdateAll(Me.DAILY__INSPDataSet)
+                DAILY__INSPDataSet.AcceptChanges()
+                MsgBox("JAI HO DATA SAVED")
+            ' Catch ex As Exception
+            'gBox(ex.Message, MsgBoxStyle.Critical)
+            ' End Try
+
+        End If
+
+
+        '  connect.Close()
+    End Sub
+
+    Private Sub IDTextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles IDTextBox.KeyUp
+        If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
+            WEEK_ENDINGDateTimePicker.Select()
+
+        End If
+    End Sub
+
+    Private Sub WEEK_ENDINGDateTimePicker_GotFocus(sender As Object, e As EventArgs) Handles WEEK_ENDINGDateTimePicker.GotFocus
+        WEEK_ENDINGDateTimePicker.Refresh()
+    End Sub
+
+    Private Sub DAY_BOOKEDNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles DAY_BOOKEDNumericUpDown.ValueChanged
+        Try
+            BEAT__PDataGridView.ClearSelection()
+            Dim INTG As Integer = DAY_BOOKEDNumericUpDown.Value
+            Dim IINN As Integer = ST__WORKED__ATComboBox.SelectedIndex
+            BEAT__PDataGridView.Rows(IINN).Selected = True
+            BEAT__PDataGridView.Rows(IINN).Cells(2).Value = INTG
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+    End Sub
+
+    Private Sub CMDJOM_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

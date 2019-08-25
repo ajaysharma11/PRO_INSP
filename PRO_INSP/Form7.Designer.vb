@@ -57,6 +57,8 @@ Partial Class Form7
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.JOMBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.JOMBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DAILY__INSPDataSet = New PRO_INSP.DAILY__INSPDataSet()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -69,6 +71,7 @@ Partial Class Form7
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.JOMBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
+        Me.JOMBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DATE__OF__JOURNEYDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.DAY_OF_JOURNEYDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.TRAINTextBox = New System.Windows.Forms.TextBox()
@@ -90,7 +93,7 @@ Partial Class Form7
         Me.NDUETextBox = New System.Windows.Forms.TextBox()
         Me.CMD_ADD = New System.Windows.Forms.Button()
         Me.CMD_SAVE = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CMD_EDIT = New System.Windows.Forms.Button()
         Me.CMD_EXIT = New System.Windows.Forms.Button()
         Me.WEEK_ENDINGDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.BEAT__PDataGridView = New System.Windows.Forms.DataGridView()
@@ -100,8 +103,6 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BEAT__PBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DAILY__INSPDataSet = New PRO_INSP.DAILY__INSPDataSet()
-        Me.JOMBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.JOMTableAdapter = New PRO_INSP.DAILY__INSPDataSetTableAdapters.JOMTableAdapter()
         Me.TableAdapterManager = New PRO_INSP.DAILY__INSPDataSetTableAdapters.TableAdapterManager()
         Me.BEAT__PTableAdapter = New PRO_INSP.DAILY__INSPDataSetTableAdapters.BEAT__PTableAdapter()
@@ -127,6 +128,8 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CMDJOM = New System.Windows.Forms.Button()
         IDLabel = New System.Windows.Forms.Label()
         WEEK_ENDINGLabel = New System.Windows.Forms.Label()
@@ -153,11 +156,12 @@ Partial Class Form7
         Me.Panel3.SuspendLayout()
         CType(Me.JOMBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.JOMBindingNavigator.SuspendLayout()
+        CType(Me.JOMBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DAILY__INSPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOMBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DAY_BOOKEDNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BEAT__PDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BEAT__PBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DAILY__INSPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JOMBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JOMDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -177,6 +181,7 @@ Partial Class Form7
         CMDJOM.TabIndex = 0
         CMDJOM.Text = "JOM FEDING"
         CMDJOM.UseVisualStyleBackColor = True
+        AddHandler CMDJOM.Click, AddressOf Me.CMDJOM_Click
         '
         'IDLabel
         '
@@ -380,7 +385,7 @@ Partial Class Form7
         Me.Panel5.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Panel5.Location = New System.Drawing.Point(1, -11)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(218, 464)
+        Me.Panel5.Size = New System.Drawing.Size(218, 618)
         Me.Panel5.TabIndex = 117
         '
         'Label2
@@ -512,6 +517,7 @@ Partial Class Form7
         Me.JOMBindingNavigator.Size = New System.Drawing.Size(1267, 25)
         Me.JOMBindingNavigator.TabIndex = 119
         Me.JOMBindingNavigator.Text = "BindingNavigator1"
+        Me.JOMBindingNavigator.Visible = False
         '
         'BindingNavigatorAddNewItem
         '
@@ -521,6 +527,16 @@ Partial Class Form7
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'JOMBindingSource
+        '
+        Me.JOMBindingSource.DataMember = "JOM"
+        Me.JOMBindingSource.DataSource = Me.DAILY__INSPDataSet
+        '
+        'DAILY__INSPDataSet
+        '
+        Me.DAILY__INSPDataSet.DataSetName = "DAILY__INSPDataSet"
+        Me.DAILY__INSPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -608,17 +624,23 @@ Partial Class Form7
         '
         'IDTextBox
         '
-        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "ID", True))
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource1, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(368, 66)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(116, 20)
         Me.IDTextBox.TabIndex = 0
+        '
+        'JOMBindingSource1
+        '
+        Me.JOMBindingSource1.DataMember = "JOM"
+        Me.JOMBindingSource1.DataSource = Me.DAILY__INSPDataSet
         '
         'DATE__OF__JOURNEYDateTimePicker
         '
         Me.DATE__OF__JOURNEYDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.JOMBindingSource, "DATE_ OF_ JOURNEY", True))
         Me.DATE__OF__JOURNEYDateTimePicker.Location = New System.Drawing.Point(368, 118)
         Me.DATE__OF__JOURNEYDateTimePicker.Name = "DATE__OF__JOURNEYDateTimePicker"
+        Me.DATE__OF__JOURNEYDateTimePicker.ShowUpDown = True
         Me.DATE__OF__JOURNEYDateTimePicker.Size = New System.Drawing.Size(116, 20)
         Me.DATE__OF__JOURNEYDateTimePicker.TabIndex = 2
         '
@@ -662,6 +684,7 @@ Partial Class Form7
         '
         'ST_FROMTextBox
         '
+        Me.ST_FROMTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ST_FROMTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "ST_FROM", True))
         Me.ST_FROMTextBox.Location = New System.Drawing.Point(368, 248)
         Me.ST_FROMTextBox.Name = "ST_FROMTextBox"
@@ -670,6 +693,7 @@ Partial Class Form7
         '
         'ST_TOTextBox
         '
+        Me.ST_TOTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ST_TOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "ST_TO", True))
         Me.ST_TOTextBox.Location = New System.Drawing.Point(368, 274)
         Me.ST_TOTextBox.Name = "ST_TOTextBox"
@@ -689,6 +713,7 @@ Partial Class Form7
         '
         Me.ROUNDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "ROUND", True))
         Me.ROUNDComboBox.FormattingEnabled = True
+        Me.ROUNDComboBox.Items.AddRange(New Object() {"Ist ROUND", "2nd ROUND", "3rd ROUND"})
         Me.ROUNDComboBox.Location = New System.Drawing.Point(634, 94)
         Me.ROUNDComboBox.Name = "ROUNDComboBox"
         Me.ROUNDComboBox.Size = New System.Drawing.Size(120, 21)
@@ -712,6 +737,7 @@ Partial Class Form7
         '
         'IR_CASE__NOTextBox
         '
+        Me.IR_CASE__NOTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.IR_CASE__NOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "IR_CASE_ NO", True))
         Me.IR_CASE__NOTextBox.Location = New System.Drawing.Point(634, 173)
         Me.IR_CASE__NOTextBox.Name = "IR_CASE__NOTextBox"
@@ -722,6 +748,7 @@ Partial Class Form7
         '
         Me.INSP_COMComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "INSP_COM", True))
         Me.INSP_COMComboBox.FormattingEnabled = True
+        Me.INSP_COMComboBox.Items.AddRange(New Object() {"NO", "YES"})
         Me.INSP_COMComboBox.Location = New System.Drawing.Point(634, 199)
         Me.INSP_COMComboBox.Name = "INSP_COMComboBox"
         Me.INSP_COMComboBox.Size = New System.Drawing.Size(120, 21)
@@ -801,18 +828,18 @@ Partial Class Form7
         Me.CMD_SAVE.Text = "SAVE"
         Me.CMD_SAVE.UseVisualStyleBackColor = False
         '
-        'Button4
+        'CMD_EDIT
         '
-        Me.Button4.BackColor = System.Drawing.Color.OrangeRed
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button4.Location = New System.Drawing.Point(867, 305)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(208, 25)
-        Me.Button4.TabIndex = 18
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.CMD_EDIT.BackColor = System.Drawing.Color.OrangeRed
+        Me.CMD_EDIT.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.CMD_EDIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CMD_EDIT.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.CMD_EDIT.Location = New System.Drawing.Point(653, 305)
+        Me.CMD_EDIT.Name = "CMD_EDIT"
+        Me.CMD_EDIT.Size = New System.Drawing.Size(208, 25)
+        Me.CMD_EDIT.TabIndex = 18
+        Me.CMD_EDIT.Text = "EDIT"
+        Me.CMD_EDIT.UseVisualStyleBackColor = False
         '
         'CMD_EXIT
         '
@@ -820,7 +847,7 @@ Partial Class Form7
         Me.CMD_EXIT.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
         Me.CMD_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CMD_EXIT.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.CMD_EXIT.Location = New System.Drawing.Point(653, 305)
+        Me.CMD_EXIT.Location = New System.Drawing.Point(867, 305)
         Me.CMD_EXIT.Name = "CMD_EXIT"
         Me.CMD_EXIT.Size = New System.Drawing.Size(208, 25)
         Me.CMD_EXIT.TabIndex = 17
@@ -881,16 +908,6 @@ Partial Class Form7
         Me.BEAT__PBindingSource.DataMember = "BEAT­_P"
         Me.BEAT__PBindingSource.DataSource = Me.DAILY__INSPDataSet
         '
-        'DAILY__INSPDataSet
-        '
-        Me.DAILY__INSPDataSet.DataSetName = "DAILY__INSPDataSet"
-        Me.DAILY__INSPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'JOMBindingSource
-        '
-        Me.JOMBindingSource.DataMember = "JOM"
-        Me.JOMBindingSource.DataSource = Me.DAILY__INSPDataSet
-        '
         'JOMTableAdapter
         '
         Me.JOMTableAdapter.ClearBeforeFill = True
@@ -916,7 +933,7 @@ Partial Class Form7
         Me.JOMDataGridView.DataSource = Me.JOMBindingSource
         Me.JOMDataGridView.Location = New System.Drawing.Point(225, 336)
         Me.JOMDataGridView.Name = "JOMDataGridView"
-        Me.JOMDataGridView.Size = New System.Drawing.Size(1022, 220)
+        Me.JOMDataGridView.Size = New System.Drawing.Size(1022, 286)
         Me.JOMDataGridView.TabIndex = 165
         '
         'DataGridViewTextBoxColumn1
@@ -1045,17 +1062,37 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn21.HeaderText = "NDUE"
         Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(560, 269)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 166
+        Me.Label3.Text = "Label3"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(723, 269)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 167
+        Me.Label4.Text = "Label4"
+        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Chocolate
         Me.ClientSize = New System.Drawing.Size(1267, 619)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.JOMDataGridView)
         Me.Controls.Add(Me.BEAT__PDataGridView)
         Me.Controls.Add(Me.WEEK_ENDINGDateTimePicker)
         Me.Controls.Add(Me.CMD_EXIT)
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.CMD_EDIT)
         Me.Controls.Add(Me.CMD_SAVE)
         Me.Controls.Add(Me.CMD_ADD)
         Me.Controls.Add(IDLabel)
@@ -1113,11 +1150,12 @@ Partial Class Form7
         CType(Me.JOMBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.JOMBindingNavigator.ResumeLayout(False)
         Me.JOMBindingNavigator.PerformLayout()
+        CType(Me.JOMBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DAILY__INSPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOMBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DAY_BOOKEDNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BEAT__PDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BEAT__PBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DAILY__INSPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JOMBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JOMDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1172,7 +1210,7 @@ Partial Class Form7
     Friend WithEvents NDUETextBox As TextBox
     Friend WithEvents CMD_ADD As Button
     Friend WithEvents CMD_SAVE As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents CMD_EDIT As Button
     Friend WithEvents CMD_EXIT As Button
     Friend WithEvents WEEK_ENDINGDateTimePicker As DateTimePicker
     Friend WithEvents BEAT__PTableAdapter As DAILY__INSPDataSetTableAdapters.BEAT__PTableAdapter
@@ -1205,4 +1243,7 @@ Partial Class Form7
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents JOMBindingSource1 As BindingSource
 End Class

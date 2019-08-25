@@ -37,6 +37,24 @@ Partial Class FRM_MAIN
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
+        'CMDJOM
+        '
+        CMDJOM.BackColor = System.Drawing.Color.OrangeRed
+        CMDJOM.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        CMDJOM.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed
+        CMDJOM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed
+        CMDJOM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral
+        CMDJOM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        CMDJOM.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CMDJOM.ForeColor = System.Drawing.Color.WhiteSmoke
+        CMDJOM.Location = New System.Drawing.Point(6, 159)
+        CMDJOM.Name = "CMDJOM"
+        CMDJOM.Size = New System.Drawing.Size(205, 40)
+        CMDJOM.TabIndex = 5
+        CMDJOM.Text = "JOM FEDING"
+        CMDJOM.UseVisualStyleBackColor = True
+        AddHandler CMDJOM.Click, AddressOf Me.CMDJOM_Click
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Maroon
@@ -97,24 +115,6 @@ Partial Class FRM_MAIN
         Me.CMD_BEAT.TabIndex = 6
         Me.CMD_BEAT.Text = "MY BEAT"
         Me.CMD_BEAT.UseVisualStyleBackColor = True
-        '
-        'CMDJOM
-        '
-        CMDJOM.BackColor = System.Drawing.Color.OrangeRed
-        CMDJOM.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        CMDJOM.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed
-        CMDJOM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed
-        CMDJOM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral
-        CMDJOM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        CMDJOM.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CMDJOM.ForeColor = System.Drawing.Color.WhiteSmoke
-        CMDJOM.Location = New System.Drawing.Point(6, 159)
-        CMDJOM.Name = "CMDJOM"
-        CMDJOM.Size = New System.Drawing.Size(205, 40)
-        CMDJOM.TabIndex = 5
-        CMDJOM.Text = "JOM FEDING"
-        CMDJOM.UseVisualStyleBackColor = True
-        AddHandler CMDJOM.Click, AddressOf Me.CMDJOM_Click
         '
         'CMD_AT_A_GLANCE
         '

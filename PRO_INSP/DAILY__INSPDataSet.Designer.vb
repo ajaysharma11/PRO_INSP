@@ -1327,8 +1327,8 @@ Partial Public Class DAILY__INSPDataSet
                     ByVal DATE__OF__JOURNEY As Date,  _
                     ByVal DAY_OF_JOURNEY As Date,  _
                     ByVal TRAIN As String,  _
-                    ByVal DEP As String,  _
-                    ByVal ARR As String,  _
+                    ByVal DEP As Date,  _
+                    ByVal ARR As Date,  _
                     ByVal ST_FROM As String,  _
                     ByVal ST_TO As String,  _
                     ByVal ST__WORKED__AT As String,  _
@@ -1409,9 +1409,9 @@ Partial Public Class DAILY__INSPDataSet
             MyBase.Columns.Add(Me.columnDAY_OF_JOURNEY)
             Me.columnTRAIN = New Global.System.Data.DataColumn("TRAIN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTRAIN)
-            Me.columnDEP = New Global.System.Data.DataColumn("DEP", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDEP = New Global.System.Data.DataColumn("DEP", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDEP)
-            Me.columnARR = New Global.System.Data.DataColumn("ARR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnARR = New Global.System.Data.DataColumn("ARR", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnARR)
             Me.columnST_FROM = New Global.System.Data.DataColumn("ST_FROM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnST_FROM)
@@ -2347,10 +2347,10 @@ Partial Public Class DAILY__INSPDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DEP() As String
+        Public Property DEP() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableJOM.DEPColumn),String)
+                    Return CType(Me(Me.tableJOM.DEPColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'DEP' in table 'JOM' is DBNull.", e)
                 End Try
@@ -2362,10 +2362,10 @@ Partial Public Class DAILY__INSPDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ARR() As String
+        Public Property ARR() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableJOM.ARRColumn),String)
+                    Return CType(Me(Me.tableJOM.ARRColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'ARR' in table 'JOM' is DBNull.", e)
                 End Try
@@ -4413,8 +4413,8 @@ Namespace DAILY__INSPDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DATE__OF__JOURNEY", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DATE_ OF_ JOURNEY", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DAY_OF_JOURNEY", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DAY_OF_JOURNEY", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TRAIN", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TRAIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DEP", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DEP", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ARR", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ARR", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DEP", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DEP", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ARR", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ARR", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ST_FROM", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ST_FROM", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ST_TO", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ST_TO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ST__WORKED__AT", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ST_ WORKED_ AT", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -5116,8 +5116,8 @@ Namespace DAILY__INSPDataSetTableAdapters
                     ByVal DATE__OF__JOURNEY As Global.System.Nullable(Of Date),  _
                     ByVal DAY_OF_JOURNEY As Global.System.Nullable(Of Date),  _
                     ByVal TRAIN As String,  _
-                    ByVal DEP As String,  _
-                    ByVal ARR As String,  _
+                    ByVal DEP As Global.System.Nullable(Of Date),  _
+                    ByVal ARR As Global.System.Nullable(Of Date),  _
                     ByVal ST_FROM As String,  _
                     ByVal ST_TO As String,  _
                     ByVal ST__WORKED__AT As String,  _
@@ -5153,15 +5153,15 @@ Namespace DAILY__INSPDataSetTableAdapters
             Else
                 command.Parameters(3).Value = CType(TRAIN,String)
             End If
-            If (DEP Is Nothing) Then
+            If (DEP.HasValue = true) Then
+                command.Parameters(4).Value = CType(DEP.Value,Date)
+            Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                command.Parameters(4).Value = CType(DEP,String)
             End If
-            If (ARR Is Nothing) Then
-                command.Parameters(5).Value = Global.System.DBNull.Value
+            If (ARR.HasValue = true) Then
+                command.Parameters(5).Value = CType(ARR.Value,Date)
             Else
-                command.Parameters(5).Value = CType(ARR,String)
+                command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (ST_FROM Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
