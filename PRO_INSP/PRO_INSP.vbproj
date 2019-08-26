@@ -78,6 +78,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DAILY__INSPDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAILY__INSPDataSet.vb">
+      <DependentUpon>DAILY__INSPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

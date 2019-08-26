@@ -4397,9 +4397,10 @@ Namespace DAILY__INSPDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, WEEK_ENDING, [DATE_ OF_ JOURNEY], DAY_OF_JOURNEY, TRAIN, DEP, ARR, ST_"& _ 
-                "FROM, ST_TO, [ST_ WORKED_ AT], ROUND, DAY_BOOKED, REMARKS, [IR_CASE_ NO], INSP_C"& _ 
-                "OM, [REPORT_ SUBMISSION], [2ROD], [3ROD], [1R0D], LINSP, NDUE FROM JOM"
+            Me._commandCollection(0).CommandText = "SELECT        ID, WEEK_ENDING, [DATE_ OF_ JOURNEY], DAY_OF_JOURNEY, TRAIN, DEP, A"& _ 
+                "RR, ST_FROM, ST_TO, [ST_ WORKED_ AT], ROUND, DAY_BOOKED, REMARKS, [IR_CASE_ NO],"& _ 
+                " INSP_COM, [REPORT_ SUBMISSION], [2ROD], "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         [3ROD], [1R0"& _ 
+                "D], LINSP, NDUE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            JOM"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ID"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection

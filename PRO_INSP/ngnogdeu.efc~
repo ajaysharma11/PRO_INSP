@@ -46,13 +46,13 @@ Partial Class Form7
         Dim LINSPLabel As System.Windows.Forms.Label
         Dim NDUELabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CMD_REPORT = New System.Windows.Forms.Button()
@@ -393,7 +393,7 @@ Partial Class Form7
         Me.Panel5.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Panel5.Location = New System.Drawing.Point(1, -11)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(218, 569)
+        Me.Panel5.Size = New System.Drawing.Size(218, 578)
         Me.Panel5.TabIndex = 117
         '
         'Label2
@@ -632,7 +632,7 @@ Partial Class Form7
         '
         'IDTextBox
         '
-        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource, "ID", True))
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.JOMBindingSource1, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(349, 63)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(116, 20)
@@ -655,7 +655,7 @@ Partial Class Form7
         'DAY_OF_JOURNEYDateTimePicker
         '
         Me.DAY_OF_JOURNEYDateTimePicker.CustomFormat = "dddd"
-        Me.DAY_OF_JOURNEYDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.JOMBindingSource, "DAY_OF_JOURNEY", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "dddd"))
+        Me.DAY_OF_JOURNEYDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.JOMBindingSource, "DAY_OF_JOURNEY", True))
         Me.DAY_OF_JOURNEYDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DAY_OF_JOURNEYDateTimePicker.Location = New System.Drawing.Point(350, 131)
         Me.DAY_OF_JOURNEYDateTimePicker.Name = "DAY_OF_JOURNEYDateTimePicker"
@@ -669,7 +669,6 @@ Partial Class Form7
         Me.TRAINTextBox.Name = "TRAINTextBox"
         Me.TRAINTextBox.Size = New System.Drawing.Size(116, 20)
         Me.TRAINTextBox.TabIndex = 4
-        Me.TRAINTextBox.Text = "BY RD"
         '
         'ST_FROMTextBox
         '
@@ -707,7 +706,6 @@ Partial Class Form7
         Me.ROUNDComboBox.Name = "ROUNDComboBox"
         Me.ROUNDComboBox.Size = New System.Drawing.Size(120, 21)
         Me.ROUNDComboBox.TabIndex = 10
-        Me.ROUNDComboBox.Text = "1st ROUND"
         '
         'DAY_BOOKEDNumericUpDown
         '
@@ -743,14 +741,12 @@ Partial Class Form7
         Me.INSP_COMComboBox.Name = "INSP_COMComboBox"
         Me.INSP_COMComboBox.Size = New System.Drawing.Size(120, 21)
         Me.INSP_COMComboBox.TabIndex = 14
-        Me.INSP_COMComboBox.Text = "NO"
         '
         'REPORT__SUBMISSIONDateTimePicker
         '
         Me.REPORT__SUBMISSIONDateTimePicker.CustomFormat = ""
         Me.REPORT__SUBMISSIONDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.JOMBindingSource, "REPORT_ SUBMISSION", True))
         Me.REPORT__SUBMISSIONDateTimePicker.Enabled = False
-        Me.REPORT__SUBMISSIONDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.REPORT__SUBMISSIONDateTimePicker.Location = New System.Drawing.Point(779, 86)
         Me.REPORT__SUBMISSIONDateTimePicker.Name = "REPORT__SUBMISSIONDateTimePicker"
         Me.REPORT__SUBMISSIONDateTimePicker.Size = New System.Drawing.Size(120, 20)
@@ -907,27 +903,27 @@ Partial Class Form7
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "WEEK_ENDING"
-        DataGridViewCellStyle8.Format = "D"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle22.Format = "D"
+        DataGridViewCellStyle22.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle22
         Me.DataGridViewTextBoxColumn2.HeaderText = "WEEK_ENDING"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "DATE_ OF_ JOURNEY"
-        DataGridViewCellStyle9.Format = "D"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle23.Format = "D"
+        DataGridViewCellStyle23.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle23
         Me.DataGridViewTextBoxColumn3.HeaderText = "DATE_ OF_ JOURNEY"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "DAY_OF_JOURNEY"
-        DataGridViewCellStyle10.Format = "dddd"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle24.Format = "dddd"
+        DataGridViewCellStyle24.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle24
         Me.DataGridViewTextBoxColumn4.HeaderText = "DAY_OF_JOURNEY"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
@@ -942,34 +938,34 @@ Partial Class Form7
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "DEP"
-        DataGridViewCellStyle11.Format = "t"
-        DataGridViewCellStyle11.NullValue = "00:00"
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle25.Format = "t"
+        DataGridViewCellStyle25.NullValue = "00:00"
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle25
         Me.DataGridViewTextBoxColumn6.HeaderText = "DEP"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "ARR"
-        DataGridViewCellStyle12.Format = "t"
-        DataGridViewCellStyle12.NullValue = "00:00"
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle26.Format = "t"
+        DataGridViewCellStyle26.NullValue = "00:00"
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle26
         Me.DataGridViewTextBoxColumn7.HeaderText = "ARR"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "ST_FROM"
-        DataGridViewCellStyle13.NullValue = "-"
-        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle27.NullValue = "-"
+        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle27
         Me.DataGridViewTextBoxColumn8.HeaderText = "ST_FROM"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "ST_TO"
-        DataGridViewCellStyle14.NullValue = "-"
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle28.NullValue = "-"
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle28
         Me.DataGridViewTextBoxColumn9.HeaderText = "ST_TO"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         '
@@ -1054,7 +1050,6 @@ Partial Class Form7
         Me.DEPDateTimePicker.Name = "DEPDateTimePicker"
         Me.DEPDateTimePicker.Size = New System.Drawing.Size(117, 20)
         Me.DEPDateTimePicker.TabIndex = 5
-        Me.DEPDateTimePicker.Value = New Date(2019, 8, 26, 0, 0, 0, 0)
         '
         'ARRDateTimePicker
         '
@@ -1065,7 +1060,6 @@ Partial Class Form7
         Me.ARRDateTimePicker.Name = "ARRDateTimePicker"
         Me.ARRDateTimePicker.Size = New System.Drawing.Size(116, 20)
         Me.ARRDateTimePicker.TabIndex = 6
-        Me.ARRDateTimePicker.Value = New Date(2019, 8, 26, 0, 0, 0, 0)
         '
         '_2RODTextBox
         '
